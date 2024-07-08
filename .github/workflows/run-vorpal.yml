@@ -28,5 +28,5 @@ jobs:
           cat r.csv >> results.csv
         done
         if [ -s results.csv ]; then
-          gh pr comment $PR_URL --body "There are Vorpal results for changed files: $(cat results.csv)"
+          gh pr comment $PR_URL --body "Vorpal results for changed files: $(cat results.csv)"
         fi
