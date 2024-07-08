@@ -12,5 +12,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_URL: ${{ github.event.pull_request.html_url }}
           BRANCH: ${{ github.head_ref }}
-          COMMIT: ${{ github.envent.after }}
+          COMMIT: ${{ github.sha }}
 
