@@ -21,12 +21,12 @@ jobs:
       uses: jitterbit/get-changed-files@v1
 
     - name: Run Vorpal on changed files
-      run: |
+      run: 
         chmod +x bin/vorpal_linux_x64
         for file in ${{ steps.files.outputs.all }}; do
           bin/vorpal_linux_x64 -s "$file" -r r.csv
           cat r.csv >> results.csv
         done
         if [ -s results.csv ]; then
-          gh pr comment $PR_URL --body "Vorpal results for changed files: $(cat results.csv)"
+          gh pr comment $PR_URL --body "There are Vorpal results for changed files: $(cat results.csv)"
         fi
