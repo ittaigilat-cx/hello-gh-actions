@@ -22,6 +22,7 @@ jobs:
 
     - name: Run Vorpal on changed files
       run: |
+        pwd && ls -la
         chmod +x bin/vorpal
         for file in ${{ steps.files.outputs.all }}; do
           bin/vorpal -s "$file" -r r.csv
