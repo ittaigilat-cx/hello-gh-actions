@@ -26,3 +26,5 @@ jobs:
         if [ -s results.csv ]; then
           gh pr comment $PR_URL --body "Vorpal results for changed files: $(cat results.csv)"
         fi
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
