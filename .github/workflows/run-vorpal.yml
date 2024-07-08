@@ -17,10 +17,12 @@ jobs:
       run: |
         echo "files=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | grep '\.source-extension$')" >> $GITHUB_OUTPUT
 
+    - id: files
+      uses: jitterbit/get-changed-files@v1
+
     - name: Run Vorpal on changed files
-      if: steps.changed-files.outputs.files != ''
       run: |
-        for file in ${{ steps.changed-files.outputs.files }}; do
+        for file in ${{ steps.files.outputs.all }}; do
           bin/vorpal -s "$file" -r r.csv
           cat r.csv >> results.csv
         done
