@@ -1,0 +1,29 @@
+name: Run Vorpal on Changed Files
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  run-vorpal:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Get list of changed files
+      id: changed-files
+      run: |
+        echo "::set-output name=files::$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | grep '\.source-extension$')"
+
+    - name: Run Vorpal on changed files
+      if: steps.changed-files.outputs.files != ''
+      run: |
+        for file in ${{ steps.changed-files.outputs.files }}; do
+          bin/vorpal -s "$file" -r r.csv
+          cat r.csv >> results.csv
+        done
+        if [ -s results.csv ]; then
+          gh pr comment $PR_URL --body "Vorpal results for changed files: $(cat results.csv)"
+        fi

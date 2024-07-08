@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
   workflow_run:
     workflows:
-      - Post welcome comment
+      - Run Vorpal on Changed Files
     types:
       - completed
 
