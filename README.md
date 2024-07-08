@@ -1,5 +1,5 @@
 <!--
-  <<< Author notes: Header of the course >>>
+  <<< Ittaig notes: Header of the course >>>
   Include a 1280x640 image, course title in sentence case, and a concise description in emphasis.
   In your repository settings: enable template repository, add your 1280x640 social image, auto delete head branches.
   Add your open source license, GitHub uses Creative Commons Attribution 4.0 International.
@@ -10,7 +10,7 @@
 _Create a GitHub Action and use it in a workflow._
 
 <!--
-  <<< Author notes: Start of the course >>>
+  <<< Ittaig notes: Start of the course >>>
   Include start button, a note about Actions minutes,
   and tell the learner why they should take the course.
   Each step should be wrapped in <details>/<summary>, with an `id` set.
@@ -41,7 +41,7 @@ Automation is key for streamlining your work processes, and [GitHub Actions](htt
 endstep0-->
 
 <!--
-  <<< Author notes: Step 1 >>>
+  <<< Ittaig notes: Step 1 >>>
   Choose 3-5 steps for your course.
   The first step is always the hardest, so pick something easy!
   Link to docs.github.com for further explanations.
@@ -85,7 +85,7 @@ To get you started, we used actions to go ahead and made a branch and pull reque
 </details>
 
 <!--
-  <<< Author notes: Step 2 >>>
+  <<< Ittaig notes: Step 2 >>>
   Start this step by acknowledging the previous step.
   Define terms and link to docs.github.com.
   Historic note: The previous course had troubleshooting steps for people not using the GitHub UI.
@@ -128,7 +128,7 @@ In this step of our exercise, we will add a "build" job. We will specify `ubuntu
 </details>
 
 <!--
-  <<< Author notes: Step 3 >>>
+  <<< Ittaig notes: Step 3 >>>
   Start this step by acknowledging the previous step.
   Define terms and link to docs.github.com.
 -->
@@ -170,7 +170,7 @@ In our action, we post a comment on the pull request using a [bash](https://en.w
 </details>
 
 <!--
-  <<< Author notes: Step 4 >>>
+  <<< Ittaig notes: Step 4 >>>
   Start this step by acknowledging the previous step.
   Define terms and link to docs.github.com.
 -->
@@ -193,7 +193,7 @@ Merge your pull request so the action will be a part of the `main` branch.
 </details>
 
 <!--
-  <<< Author notes: Step 5 >>>
+  <<< Ittaig notes: Step 5 >>>
   Start this step by acknowledging the previous step.
   Define terms and link to docs.github.com.
 -->
@@ -220,7 +220,7 @@ Your new action will run any time a new commit is created or pushed to the remot
 </details>
 
 <!--
-  <<< Author notes: Finish >>>
+  <<< Ittaig notes: Finish >>>
   Review what we learned, ask for feedback, provide next steps.
 -->
 
@@ -250,7 +250,7 @@ Here's a recap of all the tasks you've accomplished in your repository:
 </details>
 
 <!--
-  <<< Author notes: Footer >>>
+  <<< Ittaig notes: Footer >>>
   Add a link to get support, GitHub status page, code of conduct, license link.
 -->
 
