@@ -2,20 +2,16 @@ name: Run Vorpal on Changed Files
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened]
+    branches: ["main"]
 
 jobs:
-  run-vorpal:
+  build:
+    name: Run Vorpal on Changed Files
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-
-    - name: Get list of changed files
-      id: changed-files
-      run: |
-        echo "files=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | grep '\.source-extension$')" >> $GITHUB_OUTPUT
 
     - id: files
       uses: jitterbit/get-changed-files@v1
