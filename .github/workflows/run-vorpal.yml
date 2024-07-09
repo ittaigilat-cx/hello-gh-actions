@@ -25,7 +25,7 @@ jobs:
           cat r.csv >> results.csv
         done
         if [ -s results.csv ]; then
-          echo "Vorpal results for changed files:" 
+          echo "Vorpal results for changed files:\n" 
           cat results.csv | grep -v '^Language,RuleId'
           exit 1
         else
