@@ -16,17 +16,22 @@ jobs:
     - id: files
       uses: jitterbit/get-changed-files@v1
 
+    - name: Review Dog Setup
+      uses: reviewdog/action-setup@v1
+      with:
+        reviewdog_version: latest
+
     - name: Run Vorpal on changed files
       run: |
         chmod +x bin/vorpal_linux_x64
         for file in ${{ steps.files.outputs.all }}; do
           echo "Running Vorpal on $file"
-          bin/vorpal_linux_x64 -s "$file" -r r.csv
-          cat r.csv >> results.csv
+          bin/vorpal_linux_x64 -s "$file" -r r.errorformat
+          cat r.errorformat >> results.errorformat
         done
-        if [ -s results.csv ]; then
+        if [ -s results.errorformat ]; then
           echo "Vorpal results for changed files:" 
-          cat results.csv | grep -v '^Language,RuleId'
+          cat results.errorformat | reviewdog -f=golint -name=vorpal -reporter=github-pr-check -diff="git diff HEAD^"
           exit 1
         else
           echo "No Vorpal results for changed files"
