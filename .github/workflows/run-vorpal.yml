@@ -23,6 +23,7 @@ jobs:
 
     - name: Run Vorpal on changed files
       run: |
+        export REVIEWDOG_GITHUB_API_TOKEN="${{ github.token }}"
         chmod +x bin/vorpal_linux_x64
         for file in ${{ steps.files.outputs.all }}; do
           echo "Running Vorpal on $file"
